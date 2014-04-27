@@ -32,6 +32,7 @@ var main_state = {
         //Call to jump function
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         space_key.onDown.add(this.jump, this);
+        game.input.onDown.add(jump());
 
         
         //Group of Pipes
@@ -63,7 +64,6 @@ var main_state = {
         if (this.bird.angle < 20) 
             this.bird.angle += 1;
 
-        game.input.onDown.add(jump());
     },
 
     jump: function(){
