@@ -33,8 +33,6 @@ var main_state = {
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         space_key.onDown.add(this.jump, this);
         
-        var pointer_was_down = false;
-
         //Group of Pipes
         this.pipes = game.add.group();
         this.pipes.createMultiple(20, 'pipe');
@@ -64,13 +62,9 @@ var main_state = {
         if (this.bird.angle < 20) 
             this.bird.angle += 1;
 
-        if (game.input.activePointer.isDown && pointer_was_down==false)
+        if (game.input.activePointer.onDown)
         {
             this.jump();
-            pointer_was_down=true;
-        }
-        else{
-            pointer_was_down=false;
         }
     },
 
