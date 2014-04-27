@@ -32,8 +32,6 @@ var main_state = {
         //Call to jump function
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         space_key.onDown.add(this.jump, this);
-        game.input.onDown.add(jump());
-
         
         //Group of Pipes
         this.pipes = game.add.group();
