@@ -95,9 +95,9 @@ var play_state = {
             score = 0;
         }
         else{
-            this.score +=1;
+            score +=1;
         }
-        this.label_score.content =this.score;
+        this.label_score.content = score;
 
     },
 
@@ -111,7 +111,3 @@ var play_state = {
         }, this);
     },
 };
-
-// Add and start the 'main' state to start the game
-game.state.add('main', main_state);  
-game.state.start('main'); 
