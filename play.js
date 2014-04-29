@@ -1,22 +1,4 @@
-// Initialize Phaser, and creates a 400x490px game
-var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game_div');
-
-// Creates a new 'main' state that wil contain the game
-var main_state = {
-
-    preload: function() { 
-        // Function called first to load all the assets
-        
-        //Background Color
-        this.game.stage.backgroundColor='#71c5cf';
-
-        //Bird Sprite
-        this.game.load.image('bird', 'assets/bird.png');
-        //Pipe Sprite
-        this.game.load.image('pipe', 'assets/pipe.png');
-        //Sound
-        this.game.load.audio('jump', 'assets/jump.wav');
-    },
+var play_state = {
 
     create: function() { 
         // Fuction called after 'preload' to setup the game    
@@ -37,7 +19,7 @@ var main_state = {
 
         this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);
     
-        this.score = 0;
+        score = 0;
         var style = {font:"30px Arial",fill:"#ffffff"};
         this.label_score = this.game.add.text(20,20,"0", style);
     
@@ -80,7 +62,7 @@ var main_state = {
 
     restart_game: function() {
         this.game.time.events.remove(this.timer);
-        this.game.state.start('main');
+        this.game.state.start('menu');
 
     },
 
@@ -110,12 +92,11 @@ var main_state = {
         this.counter += 1;
 
         if (this.counter == 1){ 
-            this.score = 0;
+            score = 0;
         }
         else{
             this.score +=1;
         }
-        //this.score+=1;
         this.label_score.content =this.score;
 
     },
