@@ -12,10 +12,8 @@ var main_state = {
 
         //Bird Sprite
         this.game.load.image('bird', 'assets/bird.png');
-
         //Pipe Sprite
         this.game.load.image('pipe', 'assets/pipe.png');
-
         //Sound
         this.game.load.audio('jump', 'assets/jump.wav');
     },
